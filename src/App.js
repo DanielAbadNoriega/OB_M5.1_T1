@@ -26,11 +26,11 @@ function GeneradorNombres(props) {
 
   return (
     <div className="app d-flex flex-column align-items-center">
-      <h1 className="mt-2 p-2 bg-light rounded">Memoize de React con useMemo y useCallback</h1>
+      <h1 className="mt-2 p-2 bg-light shadow-sm rounded">Memoize de React con useMemo y useCallback</h1>
 
       {React.useMemo(() => {
         console.log("[ Generador Nombres ] Renderización: ", name);
-        return <h2 className="mx-2 p-2 bg-light rounded">Nombre generado: <span style={{"color":"lightcoral"}}>{name ? name : "Sin nombre"}</span></h2>;
+        return <h2 className="mx-2 p-2 bg-light shadow-sm rounded">Nombre generado: <span style={{"color":"lightcoral"}}>{name ? name : "Sin nombre"}</span></h2>;
       }, [name])}
 
       <Button label="Generar nombre" click={getName}/>
@@ -42,7 +42,7 @@ function GeneradorNombres(props) {
 function WrappedButton({ label, click }) {
   console.log(`[ WrappedButton ] Rendiración del botón: "${label}"`);
   return (
-    <button onClick={() => click()} className="btn btn-success btn-lg mx-5 mb-2 w-50">
+    <button onClick={() => click()} className="btn btn-success btn-lg mx-5 mb-2 w-50 shadow-sm">
       {label}
     </button>
   );
